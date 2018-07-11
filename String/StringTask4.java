@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class StringTask4
+{
+	public static void main(String[] args)
+	{
+		Scanner s=new Scanner(System.in);
+		int count=0;
+		String tmp="";
+		String vo="aeiouAEIOU";
+		System.out.println("Enter string:");
+		String str=s.nextLine();
+		for(int i=0;i<str.length();i++ )
+		{
+			count=0;
+			for(int j=0;j<vo.length();j++)
+			{	
+				//System.out.println(str.charAt(i)+" "+vo.charAt(j));
+				if(str.charAt(i)!=vo.charAt(j))
+				{count++;}
+			}	
+			if(count==vo.length())
+				tmp+=str.charAt(i);
+		}
+		System.out.println("Result is:"+tmp);
+	}
+}
+	

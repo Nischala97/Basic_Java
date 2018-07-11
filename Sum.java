@@ -1,0 +1,26 @@
+import java.util.*;
+public class Sum
+{
+	static int SumOfDigits(int n)
+	{
+		int sum=0;
+		while(n>0)
+		{
+			sum=sum+n%10;
+			n/=10;
+		}
+		return sum;
+	}
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		int s=0;
+		int n=sc.nextInt();
+		s=Sum.SumOfDigits(n);
+		while(s>10)
+		{
+			s=Sum.SumOfDigits(s);
+		}
+		System.out.println(s);
+	}
+}

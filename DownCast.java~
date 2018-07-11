@@ -1,0 +1,33 @@
+class A
+{
+	void m1()
+	{System.out.println("m1");}
+}
+class B extends A
+{
+	void m2()
+	{System.out.println("m2");}
+}
+class C extends B
+{
+	void m3()
+	{System.out.println("m3");}
+}
+class DownCast
+{
+	public static void main(String[] args)
+	{
+		C c=new C();
+		B b=c;
+		A a=b;
+		C cc=(C)a;
+// This shows that only one obj is created for all the cases,as we are passing only one object.
+/*System.out.println(a);
+System.out.println(b);
+System.out.println(c);
+*/
+		cc.m1();
+		cc.m2();
+		cc.m3();
+	}
+}

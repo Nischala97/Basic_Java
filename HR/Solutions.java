@@ -1,0 +1,66 @@
+import java.io.*;
+import java.util.*;
+import java.util.Arrays	;
+
+public class Solutions {
+
+        public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        String a = "anagramm";//scan.next();
+        String b = "marganaa";//scan.next();
+	a=a.toLowerCase();
+	b=b.toLowerCase();
+        String[] s1=a.split("");
+        String[] s2=b.split("");
+	Arrays.sort(s1);
+	Arrays.sort(s2);
+	int c=0;
+	int[] c1=new int[s1.length];
+	int[] c2=new int[s2.length];
+	for(int i=0;i<s1.length-1;i++)
+	{
+		c=1;
+		for(int j=i+1;j<s1.length;j++)
+		{
+			if(s1[i].equals(s1[j]))
+				{c++;c1[j]=1;}
+		}
+		if(c1[i]!=1) c1[i]=c;
+	}
+	c=0;
+	for(int i=0;i<s2.length-1;i++)
+	{
+		c=1;
+		for(int j=i+1;j<s2.length;j++)
+		{
+			if(s2[i].equals(s2[j]))
+				{c++;c2[j]=1;}
+		}
+		if(c2[i]!=1) c2[i]=c;
+	}
+
+	for(String i:s1)
+	System.out.print(i+" ");
+	System.out.println();
+	for(String i:s2)
+	System.out.print(i+" ");
+	System.out.println();
+	for(int i:c1)
+		System.out.print(i+" ");
+	System.out.println();
+	for(int i:c2)
+		System.out.print(i+" ");
+	
+	int ret=0;
+	for(int i=0;i<c1.length;i++)
+	{
+		if(c1[i]!=c2[i]) ret=1;		
+	}
+        System.out.println( (ret==0) ? "Anagrams" : "Not Anagrams" );
+    }
+}
+
+
+
+

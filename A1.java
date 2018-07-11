@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.Math;
+public class A1
+{
+	public static void main(String[] args)
+	{
+		int nums[]={10, 9, 8, -100, -99, 99, 100};
+		int n=0,c=0;
+		Arrays.sort(nums);
+		for(int i=0;i<nums.length-2;i++)
+		{ 
+			if(Math.abs(nums[i])+1==Math.abs(nums[i+1]))
+			{
+	//			System.out.println("n="+n+" c="+c);
+				if(n==2){c=1;break;}		
+				n++;
+				if(nums[i+2]!=nums[i+1]+1) 
+					n=0; 
+				else n++;
+	//System.out.println("nums["+i+"]="+nums[i]+" nums["+(i+1)+"]="+nums[i+1]+" n="+n);		
+			}  
+		}
+		//if(n==2)
+		if(n==2||c==1)
+			System.out.println("true");
+		else {System.out.println("false");}	
+	}
+}
